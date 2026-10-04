@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LOY — Rishton kulolchilik ustaxonasi</title>
+<meta name="description" content="Rishton usulida qo'lda yasalgan sirli sopol idishlar.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="nav">
+  <a href="#top" class="logo">LOY</a>
+  <nav>
+    <a href="#idish">Idishlar</a>
+    <a href="#yol">Kuydirish</a>
+    <a href="#hajm">Hajm</a>
+    <a href="#buyurtma">Buyurtma</a>
+  </nav>
+</header>
+
+<section class="hero" id="top">
+  <canvas id="wheel" aria-label="Charx ustidagi sopol idish. Sichqoncha bilan shaklini o'zgartiring."></canvas>
+  <div class="hero-text">
+    <h1>Idishni<br>qo'l shakllantiradi.</h1>
+    <p>Rishtonda uch avlod kulol. Loy shu yerning o'zidan olinadi, sir esa ishqor va o'simlik kulidan tayyorlanadi.</p>
+    <a class="btn" href="#buyurtma">Buyurtma berish</a>
+    <p class="hint">Charxdagi idish ustida sichqonchani yuriting: balandlik va kengligini o'zingiz belgilaysiz.</p>
+  </div>
+</section>
+
+<section id="idish" class="wrap">
+  <h2>Idishlar</h2>
+  <p class="lead">Har bir buyum qo'lda yasaladi, shuning uchun ikkita bir xilini topa olmaysiz.</p>
+  <div class="chips" role="group" aria-label="Turi bo'yicha filtr">
+    <button class="chip on" data-f="all">Hammasi</button>
+    <button class="chip" data-f="oshxona">Oshxona</button>
+    <button class="chip" data-f="bezak">Bezak</button>
+    <button class="chip" data-f="choy">Choy</button>
+  </div>
+  <div class="grid" id="grid"></div>
+</section>
+
+<section id="yol" class="wrap bake">
+  <div class="swatch-col">
+    <div class="swatch" id="sw"><span id="stg">Loy</span><small id="tmp">20°</small></div>
+  </div>
+  <div class="steps">
+    <h2>Loydan idishgacha</h2>
+    <ol id="steps">
+      <li data-c="#7a6a5a" data-n="Xom loy" data-t="20"><b>Loy tayyorlanadi.</b> Cho'ktiriladi, elanadi va qo'l bilan yaxshilab yoziladi, havo pufakchalari chiqib ketadi.</li>
+      <li data-c="#9a7455" data-n="Quruq shakl" data-t="35"><b>Charxda shakl beriladi.</b> Idish bir necha kun soyada, sekin quritiladi, aks holda yoriladi.</li>
+      <li data-c="#c46b3f" data-n="Bisk" data-t="900"><b>Birinchi kuydirish.</b> Taxminan 900° da loy sopolga aylanadi va endi qaytib erimaydi.</li>
+      <li data-c="#d8d2c4" data-n="Sirlash" data-t="900"><b>Sir surtiladi.</b> Idish sirga botiriladi. Kuydirishdan oldin sir oq kukun bo'lib ko'rinadi.</li>
+      <li data-c="#2f6fd6" data-n="Tayyor" data-t="1000"><b>Ikkinchi kuydirish.</b> Pechda sir erib, shishasimon ko'k yoki yashil qatlam hosil qiladi.</li>
+    </ol>
+  </div>
+</section>
+
+<section id="hajm" class="wrap">
+  <h2>Idish hajmi</h2>
+  <p class="lead">Taxminiy hisob: idish necha litr olishini bilib, to'g'ri o'lchamni tanlang.</p>
+  <div class="box">
+    <label>Shakli
+      <select id="shape">
+        <option value="1">Silindr (kosa, krujka)</option>
+        <option value="0.67">Kuvacha (yumaloq)</option>
+        <option value="0.55">Konussimon (lagan)</option>
+      </select></label>
+    <label>Balandligi: <output id="o1">20</output> sm<input type="range" id="h" min="5" max="60" value="20"></label>
+    <label>Diametri: <output id="o2">15</output> sm<input type="range" id="d" min="5" max="50" value="15"></label>
+    <div class="res"><strong id="lt">0</strong> litr <small id="cups"></small></div>
+  </div>
+</section>
+
+<section id="buyurtma" class="wrap">
+  <h2>Buyurtma</h2>
+  <form id="form" class="box" novalidate>
+    <label>Ismingiz<input name="name" autocomplete="name"><em></em></label>
+    <label>Telefon<input name="phone" inputmode="tel" placeholder="+998 90 123 45 67"><em></em></label>
+    <label>Buyum<select name="item" id="itemSel"></select><em></em></label>
+    <label>Sir rangi<select name="glaze" id="glazeSel"></select><em></em></label>
+    <label>Soni<input name="qty" type="number" value="1"><em></em></label>
+    <button class="btn" type="submit">Buyurtmani yuborish</button>
+    <p id="ok" role="status"></p>
+  </form>
+</section>
+
+<footer>© 2026 LOY ustaxonasi, Rishton. Tayyorlash muddati 2–3 hafta.</footer>
+<script src="script.js"></script>
+</body>
+</html>
